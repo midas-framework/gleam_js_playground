@@ -1,3 +1,11 @@
+import browser/console
+
+const one = 1
+
+fn inc(value) {
+    value + one
+}
+
 pub fn main(){
-    1 + 1;
+    console.log(inc(1));
 }
