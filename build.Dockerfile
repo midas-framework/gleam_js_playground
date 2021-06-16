@@ -1,8 +1,8 @@
-FROM rust:1.51.0
+FROM rust:1.52.1
 
-ENV SHA="04ada09df9526d5cd5116696e9f894543ccf24f1"
+ENV SHA="a4b1d7431d059eb800c1af9cfb3aec1efece1753"
 RUN set -xe \
-        && curl -fSL -o gleam-src.tar.gz "https://github.com/midas-framework/gleam/archive/${SHA}.tar.gz" \
+        && curl -fSL -o gleam-src.tar.gz "https://github.com/gleam-lang/gleam/archive/${SHA}.tar.gz" \
         && mkdir -p /usr/src/gleam-src \
         && tar -xzf gleam-src.tar.gz -C /usr/src/gleam-src --strip-components=1 \
         && rm gleam-src.tar.gz \
@@ -11,4 +11,4 @@ RUN set -xe \
         && rm -rf /usr/src/gleam-src 
 
 WORKDIR /opt/app
-RUN cargo install watchexec
+RUN cargo install watchexec-cli

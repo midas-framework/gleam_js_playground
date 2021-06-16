@@ -1,1 +1,1 @@
-pub external fn log(any) -> Nil = "console" "log"
+pub external fn log(any) -> Nil = "" "console.log"
